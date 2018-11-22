@@ -1,17 +1,13 @@
 package com.xinwei.controller.sitemesh;
 
 
-import com.xinwei.config.shiro.auto.annotation.SessionUser;
-import com.xinwei.entity.SysUser;
-import com.xinwei.service.ISysUserService;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import com.xinwei.service.impl.SysUserService;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -27,7 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 public class SiteMeshController  {
 
     @Autowired
-    private ISysUserService sysUserService;
+    private SysUserService sysUserService;
     /**
      * 查询系统用户 侧边栏菜单
      * @param model

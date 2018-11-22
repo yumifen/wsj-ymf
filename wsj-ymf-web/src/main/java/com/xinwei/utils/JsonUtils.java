@@ -11,16 +11,16 @@ public class JsonUtils {
 //	public static final String DATA_FORMAT="yyyy-MM-dd HH:mm:ss:SSS";
 	public static final String DATA_FORMAT="yyyy-MM-dd HH:mm:ss";
 	
-	public static Gson getGson(){
+	private static Gson getGson(){
 		return  getGson(1.0,DATA_FORMAT,FieldNamingPolicy.IDENTITY) ;
 	}
-	public static Gson getGson(String dataformat){
+	private static Gson getGson(String dataformat){
 		return  getGson(1.0,dataformat,FieldNamingPolicy.IDENTITY) ;
 	}
 	
-	public static Gson getGson(double version,String dataformat,FieldNamingPolicy policy ){
+	private static Gson getGson(double version,String dataformat,FieldNamingPolicy policy ){
 		return  new GsonBuilder()  
-	        .excludeFieldsWithoutExposeAnnotation() //不导出实体中没有用@Expose注解的属性  
+	        .excludeFieldsWithoutExposeAnnotation() //不导出实体中没有用@Expose注解的属性
 	        .enableComplexMapKeySerialization() //支持Map的key为复杂对象的形式  
 	        .serializeNulls().setDateFormat(dataformat)//时间转化为特定格式    
 	        .setFieldNamingPolicy(policy)//会把字段首字母大写,注:对于实体上使用了@SerializedName注解的不会生效.  

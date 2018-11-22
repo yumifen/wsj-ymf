@@ -2,7 +2,6 @@ package com.xinwei.config.shiro;
 
 import com.xinwei.common.Constants;
 import com.xinwei.entity.SysUser;
-import com.xinwei.service.ISysUserService;
 import com.xinwei.utils.Encodes;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
@@ -14,6 +13,7 @@ import org.apache.shiro.util.ByteSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.xinwei.service.impl.SysUserService;
 
 import javax.annotation.PostConstruct;
 
@@ -31,7 +31,7 @@ public class MyShiroRealm extends AuthorizingRealm{
     private static final Logger logger = LoggerFactory.getLogger(MyShiroRealm.class);
 
     @Autowired
-    private ISysUserService sysUserService;
+    private SysUserService sysUserService;
 
     /**
      * 设定密码校验的Hash算法与迭代次数

@@ -4,8 +4,6 @@ package com.xinwei.controller.system;
 import com.xinwei.common.ResponseJson;
 import com.xinwei.config.shiro.auto.ShiroProperties;
 import com.xinwei.entity.SysUser;
-import com.xinwei.service.ISysUserService;
-import com.xinwei.utils.JsonUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.subject.Subject;
@@ -18,13 +16,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.Map;
+import com.xinwei.service.impl.SysUserService;
 
 
 /**
@@ -41,7 +39,7 @@ public class SignController {
     private ShiroProperties shiroProperties;
 
     @Autowired
-    private ISysUserService sysUserService;
+    private SysUserService sysUserService;
 
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String loginForm(Model model) {

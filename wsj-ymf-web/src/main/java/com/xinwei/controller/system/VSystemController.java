@@ -4,14 +4,13 @@ import com.xinwei.common.WSJResult;
 import com.xinwei.config.shiro.auto.annotation.SessionUser;
 import com.xinwei.controller.system.dto.DefaultDTO;
 import com.xinwei.entity.SysUser;
-import com.xinwei.service.ISysUserService;
 import com.xinwei.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import com.xinwei.service.impl.SysUserService;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -25,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 public class VSystemController {
 
     @Autowired
-    private ISysUserService sysUserService;
+    private SysUserService sysUserService;
     /**
      *
      *@描述

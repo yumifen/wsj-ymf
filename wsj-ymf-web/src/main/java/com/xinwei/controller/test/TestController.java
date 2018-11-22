@@ -2,27 +2,28 @@ package com.xinwei.controller.test;
 
 import com.xinwei.common.base.controller.BaseController;
 import com.xinwei.entity.SysUser;
-import com.xinwei.service.ISysUserService;
-import com.xinwei.utils.Encodes;
+import com.xinwei.service.TestService;
 import com.xinwei.utils.PasswordUtils;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
+import com.xinwei.service.impl.SysUserService;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/web")
 public class TestController extends BaseController {
 
     @Autowired
-    ISysUserService sysUserService;
+    SysUserService sysUserService;
+
+    @Autowired
+    TestService  testService;
 
     @GetMapping(value = "/test")
     public String test(Model model, HttpServletRequest request) {
@@ -43,5 +44,9 @@ public class TestController extends BaseController {
     public void md5w() {
         String md5 = PasswordUtils.entryptPassword("111111");
         System.out.print(md5);
+    }
+
+    public void testGrid(Model model, HttpServletRequest request, HttpServletResponse response,int pageNum,int pageSize){
+
     }
 }
