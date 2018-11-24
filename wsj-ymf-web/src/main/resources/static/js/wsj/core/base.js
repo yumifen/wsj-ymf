@@ -119,6 +119,6 @@ define(function() {
 	var fn_=extend();
 	window['u']=window['u']||  namespace(name_+'.'+module_,fn_);
 	window[name_]=window['u'];
-	log("loadind base ...");
+	//log("loadind base ...");
 	return fn_;
 });

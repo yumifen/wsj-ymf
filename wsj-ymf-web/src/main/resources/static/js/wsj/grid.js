@@ -64,24 +64,51 @@
          components:{                                                                                       //在组件中定义分页toolbar
              "pagegation-template":{
                  template:'<div class="row">' +
-                               '<div class="col-sm-6">' +
-                                   '<div class="dataTables_info" id="editable_info" role="alert" aria-live="polite" aria-relevant="all">显示 1 到 10 项，共 57 项</div>' +
-                               '</div>' +
-                               '<div class="col-sm-6">' +
-                                   '<div class="dataTables_paginate paging_simple_numbers" id="editable_paginate">' +
-                                      '<ul class="pagination">' +
-                                             '<li class="paginate_button previous disabled" aria-controls="editable" tabindex="0" id="editable_previous"><a href="#">上一页</a></li>' +
+                                 '<div class="col-sm-6">' +
+                                     '<div class="dataTables_info"   role="alert" aria-live="polite" aria-relevant="all">显示 1 到 10 项，共 57 项</div>' +
+                                 '</div>' +
+                                 '<div class="col-sm-6">' +
+                                     '<div class="dataTables_paginate paging_simple_numbers" >' +
+                                         '<ul class="pagination">' +
+                                                 '<li class="paginate_button previous disabled" aria-controls="editable" tabindex="0"><a href="#">上一页</a></li>' +
                                                  '<li class="paginate_button active" aria-controls="editable" tabindex="0"><a href="#">1</a></li>' +
                                                  '<li class="paginate_button " aria-controls="editable" tabindex="0"><a href="#">2</a></li>' +
                                                  '<li class="paginate_button " aria-controls="editable" tabindex="0"><a href="#">3</a></li>' +
                                                  '<li class="paginate_button " aria-controls="editable" tabindex="0"><a href="#">4</a></li>' +
                                                  '<li class="paginate_button " aria-controls="editable" tabindex="0"><a href="#">5</a></li>' +
                                                  '<li class="paginate_button " aria-controls="editable" tabindex="0"><a href="#">6</a></li>' +
-                                            '<li class="paginate_button next" aria-controls="editable" tabindex="0" id="editable_next"><a href="#">下一页</a></li>' +
-                                       '</ul>' +
-                                   '</div>' +
+                                                 '<li class="paginate_button next" aria-controls="editable" tabindex="0" ><a href="#">下一页</a></li>' +
+                                         '</ul>' +
+                                     '</div>' +
+                                 '</div>' +
+                              '</div>'
+             },
+             "rows-template":{
+                 // template:'<div class="row">' +
+                 //                 '<div class="col-sm-6">' +
+                 //                                 '<div class="dataTables_length">' +
+                 //                                     '<label>每页 <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control input-sm">' +
+                 //                                         '<option value="10">10</option>' +
+                 //                                         '<option value="25">25</option>' +
+                 //                                         '<option value="50">50</option>' +
+                 //                                         '<option value="100">100</option'>+
+                 //                                     '</select> 条记录</label>' +
+                 //                                 '</div>' +
+                 //                 '</div>'+
+                 //             '</div>'
+                 template:'<div class="row">' +
+                               '<div class="col-sm-6">' +
+                                    '<div class="dataTables_length" id="DataTables_Table_0_length"><label>每页 ' +
+                                        '<select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="form-control input-sm">' +
+                                             '<option value="10">10</option>' +
+                                             '<option value="15">15</option>' +
+                                             '<option value="20">20</option>' +
+                                             '<option value="25">25</option>' +
+                                        '</select> 条记录</label>' +
+                                    '</div>' +
                                '</div>' +
                             '</div>'
+
              }
          },
          watch:{
