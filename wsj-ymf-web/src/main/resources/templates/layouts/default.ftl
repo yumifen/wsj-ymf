@@ -22,12 +22,15 @@
     <link href="${req.contextPath}/css/style.css?v=4.1.0" rel="stylesheet"/>
     <link href="${req.contextPath}/css/plugins/easyUI/easyui.css?v=4.4.0" rel="stylesheet"/>
     <link href="${req.contextPath}/css/plugins/toastr/toastr.min.css?v=4.4.0" rel="stylesheet">
-
+    <link href="${req.contextPath}/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
 
     <!--jquery全家桶-->
     <script src="${req.contextPath}/js/jquery.min.js?v=2.1.4"></script>
     <script src="${req.contextPath}/js/plugins/validate/jquery.validate.min.js"></script>
     <script src="${req.contextPath}/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="${req.contextPath}/js/plugins/jeditable/jquery.jeditable.js"></script>
+    <script src="${req.contextPath}/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="${req.contextPath}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
     <script src="${req.contextPath}/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
     <!--bootstrap-->
@@ -46,12 +49,25 @@
     <script src="${req.contextPath}/js/require.js" type="text/javascript"></script>
 
     <script src="${req.contextPath}/js/wsj/config.js" type="text/javascript"></script>
+
+    <script src="${req.contextPath}/js/wsj/grid.js" type="text/javascript"></script>
+
 </head>
-<body class="fixed-sidebar full-height-layout gray-bg" style="overflow: hidden">
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow: hidden;">
 <sitemesh:write property='body' />
  <!--自定一的js文件-->
  <script src="${req.contextPath}/js/wsj/wsjUtils.js" type="text/javascript"></script>
  <script src="${req.contextPath}/js/slife/toast.js" type="text/javascript"></script>
 </body>
 <sitemesh:write property='head' />
+
+<#--<script type="text/html" id="pagegation-template-app">-->
+    <#--<div class="btn-group">-->
+        <#--<button class="btn btn-white" type="button"  data-bind="visible: leftTag ,click: $root.fristPage"><i class="fa fa-chevron-left"></i></button>-->
+
+        <#--<button class="btn btn-white " data-bind="css:$root.currentPage()== $data?'active':'',text: $data,visible: $data>0,click: $root.goPage.bind()">2</button>-->
+
+        <#--<button class="btn btn-white" type="button" data-bind="visible: rightTag,click: $root.lastPage"><i class="fa fa-chevron-right"></i></button>-->
+    <#--</div>-->
+<#--</script>-->
 </html>

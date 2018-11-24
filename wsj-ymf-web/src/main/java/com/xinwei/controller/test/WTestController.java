@@ -1,8 +1,11 @@
 package com.xinwei.controller.test;
 
+import com.xinwei.common.PageResult;
+import com.xinwei.common.WSJResult;
 import com.xinwei.common.base.controller.BaseController;
 import com.xinwei.entity.SysUser;
 import com.xinwei.service.TestService;
+import com.xinwei.utils.JsonUtils;
 import com.xinwei.utils.PasswordUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
@@ -17,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/web")
-public class TestController extends BaseController {
+public class WTestController extends BaseController {
 
     @Autowired
     SysUserService sysUserService;
@@ -46,7 +49,4 @@ public class TestController extends BaseController {
         System.out.print(md5);
     }
 
-    public void testGrid(Model model, HttpServletRequest request, HttpServletResponse response,int pageNum,int pageSize){
-
-    }
 }
