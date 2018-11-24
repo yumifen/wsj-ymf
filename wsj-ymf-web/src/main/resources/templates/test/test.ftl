@@ -14,6 +14,8 @@
           <div class="row" id="vueApp">
               <div class="ibox float-e-margins">
                    <div class="ibox-content">
+                     <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                       <rows-template></rows-template>
                        <table class="table table-hover table-striped table-bordered table-sm">
                            <thead>
                            <tr role="row">
@@ -24,6 +26,7 @@
                                <th class="sorting_asc" tabindex="0" aria-controls="editable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="渲染引擎：激活排序列升序" style="width: 260px;">ID</th>
                                <th class="sorting" tabindex="0" aria-controls="editable" rowspan="1" colspan="1" aria-label="浏览器：激活排序列升序" style="width: 459px;">名称</th>
                                <th class="sorting" tabindex="0" aria-controls="editable" rowspan="1" colspan="1" aria-label="平台：激活排序列升序" style="width: 433px;">权限</th>
+                           </tr>
                            </thead>
                            <tbody>
                            <tr  class="gradeA odd" v-for="(menu,index) in dataArray">
@@ -37,6 +40,7 @@
                            </tbody>
                        </table>
                        <pagegation-template></pagegation-template>
+                     </div>
                    </div>
               </div>
           </div>
