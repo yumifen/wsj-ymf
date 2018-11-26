@@ -14,7 +14,14 @@ define(["utils"],function(utils) {
     // }
     var grid = new Grid({
         href:'/data/testGrid',
-        vueId:'vueApp'
+        vueId:'vueApp',
+        extentdVueCS:{
+            opName(){
+                return function (value){
+                    return "ceshi____"+value;
+                }
+            }
+        }
     });
 
     return utils.extend({
