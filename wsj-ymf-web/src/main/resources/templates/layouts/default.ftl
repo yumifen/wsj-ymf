@@ -53,7 +53,7 @@
     <script src="${req.contextPath}/js/wsj/grid.js" type="text/javascript"></script>
 
 </head>
-<body class="fixed-sidebar full-height-layout gray-bg" style="overflow: hidden;">
+<body class="fixed-sidebar full-height-layout gray-bg">
 <sitemesh:write property='body' />
  <!--自定一的js文件-->
  <script src="${req.contextPath}/js/wsj/wsjUtils.js" type="text/javascript"></script>

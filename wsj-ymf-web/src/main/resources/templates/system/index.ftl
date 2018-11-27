@@ -4,7 +4,7 @@
     <script type="text/javascript">
         $(function() {
             require(["system/js/index"], function(index) {
-                index.log('${req}');
+               //index.log('${req}');
                var vo = index.mainV;
                vo.getUserInfor();
             })

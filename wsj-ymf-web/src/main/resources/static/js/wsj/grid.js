@@ -13,6 +13,7 @@ function Grid(options){                    //js 调用生成grid实例，初始�
         stepLenth:5,               //定义存储index的大小
         vueId:'',                  //与VUE进行绑定的id
         sizeArray:[10,15,20,25],
+        multSelect:true,                              //默认开启checkbox全选
         callBack:function(dataArray,data){           //grid加载后的回调函数
 
         },
@@ -39,7 +40,10 @@ function Grid(options){                    //js 调用生成grid实例，初始�
         srow:0,
         erow:0,
         lastNum:0,
-        nextNum:0
+        nextNum:0,
+        checked:false,
+        multSelect:opt.multSelect,
+        checkItems:[],
     }
 
     this_.vueMethodOptions = {
@@ -54,12 +58,24 @@ function Grid(options){                    //js 调用生成grid实例，初始�
             rload(this_,maxPage);
         },
         sizeLoad:function(pageSize){
-            console.log(pageSize);
             this_.gridOptions.pageSize = pageSize;
             rload(this_,1);
         }
     }
-    //this_.vueMethodOptions = $.extend({},this_.gridOptions.extendVueMS,options); //重新加载配置
+
+    this_.gridOptions.extendVueMS = $.extend({},this_.gridOptions.extendVueMS,{
+        checkedAll: function() {
+            var _this = this;
+            if (!_this.checked) { //实现反选
+                _this.checkItems = [];
+            } else { //实现全选
+                _this.checkItems = [];
+                this.dataArray.forEach(function(item, index) {
+                    _this.checkItems.push(item);
+                });
+            }
+        }
+    }); //重新加载配置
 
     console.log("v-grid的model当前为："+this_.gridOptions.vueId);
 
@@ -133,6 +149,7 @@ function Grid(options){                    //js 调用生成grid实例，初始�
                         },
                         watch:{
                             sizeVal(val,oladVal){
+                                 console.log("当前页面pageSize的大小更改为："+val);
                                  this.sizeLoad(val);
                             }
                         }
@@ -164,6 +181,17 @@ var rbing = function(this_){
                 },
                 //deep:true,
             },
+            'checkItems': {
+                handler: function(val, oldVal) {
+                      console.log(val);
+                      if(val.length===this.checkItems.length&&val.length!=0){
+                          this.checked= true;
+                      }else{
+                          this.checked = false;
+                      }
+                },
+                deep: true
+            }
         }
     });
 }
@@ -273,9 +301,7 @@ var rload = function(this_,pageNumber){
                 var length = result.grids.length;
                 this_.vueDataOptions.erow = result.currNum>1?(result.currNum)*(result.currSize)+length:length;
             }
-            if(this_.gvue!=null){
-                dbind(this_);
-            }else{
+            if(this_.gvue==null){
                 rbing(this_);
             }
         },

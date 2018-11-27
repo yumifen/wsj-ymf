@@ -20,7 +20,7 @@
                            <thead>
                            <tr role="row">
                                <th class="bs-checkbox " style="width: 36px;text-align: center" data-field="state" >
-                                   <div class="th-inner "><input name="btSelectAll" type="checkbox"></div>
+                                   <div class="th-inner "><input  type="checkbox" v-model="checked" v-on:click="checkedAll"/></div>
                                    <div class="fht-cell" style="width: 36px;"></div>
                                </th>
                                <th class="sorting_asc" style="width: 260px;text-align: center">ID</th>
@@ -30,7 +30,7 @@
                            </thead>
                            <tbody>
                            <tr  class="gradeA odd" v-for="(menu,index) in dataArray">
-                               <td style="text-align: center"><input type="checkbox"/></td>
+                               <td style="text-align: center"><input  type="checkbox" v-model="checkItems" :value="menu" /></td>
                                <td style="text-align: center">{{menu.id}}</td>
                                <td style="text-align: center" >{{opName(menu.name)}}</td>
                                <td style="text-align: center">{{menu.permission}}</td>

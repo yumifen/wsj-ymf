@@ -34,6 +34,6 @@ public class TestService {
            List<SysMenu> sysMenus = sysMenuMapper.querySysMenusAll();
            PageResult<SysMenu> pageInfo = new PageResult<SysMenu>(sysMenus);
            System.out.println(JsonUtils.object2Json(pageInfo));
-           return null;
+           return pageInfo;
        }
 }
