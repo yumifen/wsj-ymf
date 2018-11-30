@@ -6,7 +6,7 @@ define(function() {
 	var newC  = function(model_f,modelId) {
 		var this_=this;
 		var model = $.extend({ "modelId": modelId  },  model_f);
-		if(!model || !model.modelId || model.modelId=="")  throw new Error("modelId can not be empty") ; 
+		if(!model || !model.modelId || model.modelId=="")  throw new Error("modelId can not be empty") ;
 		if(typeof model.modelId != 'string') throw new Error('modelId must be a string'); 
 		var ns=namespace(name_+'.'+module_+'.'+model.modelId,this_); 
 		ns[model_]=model;  
@@ -119,6 +119,6 @@ define(function() {
 	var fn_=extend();
 	window['u']=window['u']||  namespace(name_+'.'+module_,fn_);
 	window[name_]=window['u'];
-	log("loadind base ...");
+	//log("loadind base ...");
 	return fn_;
 });

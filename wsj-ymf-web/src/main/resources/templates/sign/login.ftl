@@ -53,7 +53,7 @@
         </div>
     </div>
     <div class="signup-footer">
-        <div style="text-align: center;">北京市朝阳区瀚海蓝鲸科技服务有限公司  &copy; 2018 All Rights Reserved.
+        <div style="text-align: center;"> Copyright © 2004 Adobe Systems Incorporated. All rights reserved. 北京市朝阳区瀚海蓝鲸科技服务有限公司
         </div>
     </div>
 </div>

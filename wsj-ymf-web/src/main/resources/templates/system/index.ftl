@@ -43,7 +43,7 @@
                             <li><a href="${req.contextPath}/logout">安全退出</a></li>
                         </ul>
                     </div>
-                    <div class="logo-element">Slife</div>
+                    <div class="logo-element">Yumifen</div>
                 </li>
 
                 <li>
@@ -55,8 +55,10 @@
                 <li>
                     <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Example</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="${req.contextPath}/web/test">TestCase</a>
-                        </li>
+                        <li><a class="J_menuItem" href="${req.contextPath}/web/test">TestGrid</a></li>
+                        <li><a class="J_menuItem" href="${req.contextPath}/web/testModal">TestModal
+
+                        +</a></li>
                     </ul>
                 </li>
             </ul>
@@ -115,7 +117,7 @@
 
 
         <div class="footer">
-            <div class="pull-right">xxx@foxmail.com,挖水晶@版权</div>
+            <div class="pull-right">Copyright © 2004 Adobe Systems Incorporated. All rights reserved. 北京市朝阳区瀚海蓝鲸科技服务有限公司</div>
         </div>
     </div>
     <!--右侧部分结束-->

@@ -33,15 +33,17 @@
     <script src="${req.contextPath}/js/plugins/dataTables/dataTables.bootstrap.js"></script>
     <script src="${req.contextPath}/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    <!--bootstrap-->
-    <script src="${req.contextPath}/js/bootstrap.min.js?v=3.3.6"></script>
-
     <script src="${req.contextPath}/js/hplus.js"></script>
     <script src="${req.contextPath}/js/contabs.js" type="text/javascript"></script>
 
+
     <script src="${req.contextPath}/js/plugins/easyUI/jquery.easyui.min.js" type="text/javascript"></script>
+
     <script src="${req.contextPath}/js/plugins/layer/layer.min.js"></script>
     <script src="${req.contextPath}/js/plugins/toastr/toastr.min.js" type="text/javascript"></script>
+
+    <!--bootstrap-->
+    <script src="${req.contextPath}/js/bootstrap.min.js?v=3.3.6"></script>
 
     <!-- VUE js 文件-->
     <script src="${req.contextPath}/js/vue.min.js" type="text/javascript"></script>
@@ -52,12 +54,16 @@
 
     <script src="${req.contextPath}/js/wsj/grid.js" type="text/javascript"></script>
 
+
+    <script src="${req.contextPath}/js/wsj/wsjUtils.js" type="text/javascript"></script>
+
+
+    <script src="${req.contextPath}/js/slife/toast.js" type="text/javascript"></script>
+
 </head>
 <body class="fixed-sidebar full-height-layout gray-bg">
 <sitemesh:write property='body' />
- <!--自定一的js文件-->
- <script src="${req.contextPath}/js/wsj/wsjUtils.js" type="text/javascript"></script>
- <script src="${req.contextPath}/js/slife/toast.js" type="text/javascript"></script>
+
 </body>
 <sitemesh:write property='head' />
 

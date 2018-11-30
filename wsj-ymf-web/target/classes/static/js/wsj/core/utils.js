@@ -1,6 +1,4 @@
 define( ["base"],function (base ){
-	
-	     
-	base.log("loaded utils");
-　　return base.extend();
+    //$('pre').hide(); //是否在html页显示vue的data参数
+    return base.extend();
 });

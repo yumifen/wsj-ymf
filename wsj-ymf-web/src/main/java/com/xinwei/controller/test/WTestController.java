@@ -34,7 +34,7 @@ public class WTestController extends BaseController {
         String username = (String) currentUser.getPrincipal();
         SysUser slife = sysUserService.getByLoginName(username);
         model.addAttribute("name",username);
-        return "test/test";
+        return "test/testGrid";
     }
 
     @GetMapping(value = "/testMybatis")
@@ -47,6 +47,21 @@ public class WTestController extends BaseController {
     public void md5w() {
         String md5 = PasswordUtils.entryptPassword("111111");
         System.out.print(md5);
+    }
+
+    @GetMapping(value = "/detail")
+    public String detail(Model model, HttpServletRequest request) {
+        System.out.println("进入了detail方法");
+        return "test/pages/testDetail";
+    }
+
+    @GetMapping(value = "/testModal")
+    public String testModal(Model model, HttpServletRequest request) {
+        Subject currentUser = SecurityUtils.getSubject();
+        String username = (String) currentUser.getPrincipal();
+        SysUser slife = sysUserService.getByLoginName(username);
+        model.addAttribute("name",username);
+        return "test/testModal";
     }
 
 }

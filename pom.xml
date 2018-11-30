@@ -29,6 +29,7 @@
         <mybatis-plus.version>2.1.0</mybatis-plus.version>
         <activiti.version>5.22.0</activiti.version>
         <commons-codec.version>1.10</commons-codec.version>
+        <commons-io.version>2.4</commons-io.version>
         <aspectjweaver.version>1.8.10</aspectjweaver.version>
         <pinyin4j.version>2.5.1</pinyin4j.version>
         <fastjson.version>1.2.36</fastjson.version>
@@ -190,12 +191,19 @@
             <artifactId>gson</artifactId>
             <version>${gson.version}</version>
         </dependency>
+
     </dependencies>
 
 
     <!--依赖版本说明-->
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
@@ -238,6 +246,12 @@
             </dependency>
 
             <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>4.0.0</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.activiti</groupId>
                 <artifactId>activiti-spring-boot-starter-basic</artifactId>
                 <version>${activiti.version}</version>
@@ -265,6 +279,20 @@
         </dependencies>
     </dependencyManagement>
 
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>Bjjdsy Repository</name>
+            <url>http://192.168.100.111:8081/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
@@ -284,7 +312,5 @@
 
         </plugins>
     </build>
-
-
 
 </project>

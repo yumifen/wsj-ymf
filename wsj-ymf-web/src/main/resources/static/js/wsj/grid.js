@@ -183,7 +183,6 @@ var rbing = function(this_){
             },
             'checkItems': {
                 handler: function(val, oldVal) {
-                      console.log(val);
                       if(val.length===this.checkItems.length&&val.length!=0){
                           this.checked= true;
                       }else{
@@ -334,5 +333,10 @@ Grid.prototype.refresh=function(){
 Grid.prototype.getParams=function(){
     var this_=this;
     return this_.gridOptions.params;
+}
+
+Grid.prototype.getCheckItems=function(){
+    var this_=this;
+    return this_.gvue.checkItems;
 }
 

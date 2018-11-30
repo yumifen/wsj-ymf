@@ -1,15 +1,16 @@
+<!DOCTYPE html>
 <html>
     <head>
         <script type="text/javascript">
             $(function() {
-                require(["test/js/index"], function(index) {
+                require(["test/js/testGrid"], function(index) {
                     index.init();
                     index.form();
-                })
+                 })
             })
         </script>
     </head>
-    <body class="gray-bg fixed-sidebar full-height-layout "   style="overflow: scroll;">
+    <body  class="gray-bg"   style="overflow: scroll;">
       <div  class="col-sm-12" class="wrapper wrapper-content animated fadeInRight">
           <div class="row" id="vueApp">
               <div class="ibox float-e-margins">
@@ -43,7 +44,13 @@
                      </div>
                    </div>
               </div>
+              <#--<pre  v-text="$data"></pre>-->
           </div>
       </div>
+      <div id="dianjiwo">
+          <button @click="helloWorld">输出grid选中的参数</button>
+          <#--<pre  v-text="$data"></pre>-->
+      </div>
+
     </body>
 </html>
